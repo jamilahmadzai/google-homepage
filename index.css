@@ -10,7 +10,6 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  /* flex-direction: row; */
 }
 .nav-left {
   margin-top: 15px;
@@ -35,7 +34,6 @@ a {
   margin-right: 15px;
   font-family: arial, sans-serif;
   font-size: 13px;
-  /* padding: 10px; */
 }
 
 .nav-right a {
@@ -45,6 +43,50 @@ a {
 }
 a:hover {
   text-decoration: underline;
+}
+
+.menu-btn {
+  background-color: white;
+  border: none;
+}
+
+.menu-items {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 5px;
+  position: absolute;
+  top: 0px;
+  width: 300px;
+  z-index: 1;
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+  border-color: rgba(223, 225, 229, 0);
+  border-radius: 10px;
+  margin-top: 65px;
+  right: 0px;
+  margin-right: 30px;
+
+  opacity: 1;
+  max-height: calc(-65px + 100vh);
+  visibility: hidden;
+}
+.active {
+  visibility: visible;
+}
+
+.menu-item {
+  background-color: transparent;
+  border: none;
+  color: coral;
+  margin: 10px;
+  height: 80px;
+  width: 80%;
+  font-size: 35px;
+}
+
+.menu-item:hover {
+  background-color: lightblue;
+  border: none;
+  border-radius: 6px;
 }
 
 .container {
@@ -67,7 +109,7 @@ a:hover {
   background: #fff;
   display: flex;
   border-radius: 24px;
-  z-index: 3;
+
   height: 44px;
   margin: 0 auto;
 }
@@ -103,13 +145,6 @@ a:hover {
   width: 20px;
   margin-top: 13px;
   margin-left: 93%;
-
-  /* position: block;
-  display: block;
-  width: 20px;
-
-  float: left;
-  height: 44px; */
 }
 
 .buttons {
@@ -183,10 +218,11 @@ button:focus {
 }
 
 @media only screen and (max-width: 600px) {
-  body {
-    width: 100%;
-  }
   .navbar {
+    display: none;
+  }
+
+  .menu-items {
     display: none;
   }
   .container {
